@@ -1,7 +1,7 @@
 How to start
 ============
 
-Set Flask Env viables, on windows, use export on Linux.
+Set Flask CLI Env viables, on windows, use export on Linux.
 
 ```
 set FLASK_APP=flask_rest_psql_docker.app
@@ -17,8 +17,7 @@ Run `flask shell` and then,
 >>> db.session.commit()
 ```
 
-Start flask app with `flask run`, to view all your routes you can run `flask routes` 
-and it will give you a map of all your routes.
+Start flask app with `flask run`,  and navigate to `http://localhost:5000/api/people/`. To view all your routes you can run `flask routes` and it will give you a map of all your routes.
 
 PSQL Setup
 ============
