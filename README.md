@@ -4,7 +4,7 @@ How to start
 Set Flask Env viables, on windows, use export on Linux.
 
 ```
-set FLASK_APP=flasky_numpy.app
+set FLASK_APP=flask_rest_psql_docker.app
 set FLASK_ENV=development
 ```
 
