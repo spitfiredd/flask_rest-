@@ -12,7 +12,7 @@ Run `flask shell` and then,
 
 ```
 >>> db.create_all()
->>> user = User(first='wally', last='west', job='the flash', shool='star labs', age=19)
+>>> user = User(first='wally', last='west', job='the flash', school='star labs', age=19)
 >>> db.session.add(user)
 >>> db.session.commit()
 ```
