@@ -1,10 +1,9 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 from flask_restplus import Api, Resource
-from flask import jsonify
 
 
-blueprint = Blueprint('api', __name__)
-api = Api(blueprint)
+api_bp = Blueprint('api', __name__)
+api = Api(api_bp)
 
 ns_ppl = api.namespace('people', description='People Information')
 ns_dogs = api.namespace('dogs', description='Dog Information')
@@ -38,7 +37,8 @@ class People(Resource):
         """
         from .models import People, PeopleSchema
 
-        person = People.query.filter_by(id=f'{id}').first()
+        # removed f-string, id is an int, no need to cast
+        person = People.query.filter_by(id=id).first()
         schema = PeopleSchema()
         output = schema.dump(person).data
 
@@ -72,4 +72,3 @@ class Dogs(Resource):
         """
         Edits a selected dog
         """
-

@@ -1,17 +1,16 @@
 from flask import Blueprint
 from flask_restplus import Api
 
-blueprint = Blueprint('website', __name__)
-api = Api(blueprint)
+# don't use the same name for blueprint instances.
+web_bp = Blueprint('website', __name__)
+api = Api(web_bp)
 
 
-@blueprint.route('/')
+@web_bp.route('/')
 def homepage():
     return('hello')
 
 
-@blueprint.route('/dogs/')
+@web_bp.route('/dogs/')
 def dog():
     return('dogs')
-
-
